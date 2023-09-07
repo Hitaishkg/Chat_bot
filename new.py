@@ -5,12 +5,14 @@ class TouristSpotChatbot:
         self.budget = 0
         self.season = ""
         self.location = ""
+        self.kind_of_place = ""
 
     def start(self):
         print("Welcome to the Tourist Spot Recommendation Chatbot!")
         self.location = input("Is your trip national or international? ").lower()
         self.get_budget()
         self.get_season()
+        self.get_kid_of_place()
         self.recommend_spot()
 
     def get_budget(self):
@@ -18,7 +20,8 @@ class TouristSpotChatbot:
 
     def get_season(self):
         self.season = input("What season are you planning to travel? ").lower()
-
+    def get_kid_of_place(self):
+        self.kind_of_place("what kind of palce do you a  want to visit historical places or mountains or beaches or ")
     def recommend_spot(self):
         if self.location == "national":
             if self.budget > 1000:
@@ -56,6 +59,11 @@ class TouristSpotChatbot:
                     print("Sorry, I don't have recommendations for that season.")
             else:
                 print("Your budget might be too low for national travel.")
+        if self.location == "international":
+            if(self.budget > 1000000):
+                
+                
+                
         else:
             print("Sorry, I didn't understand your location choice.")
 
